@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git 'https://github.com/MateusTeixeiraFolha/goDevs.git'
+                git 'https://github.com/julioMoudatsos/jenkinsGodevs.git'
                 sh './mvnw clean compile'
                 // bat '.\\mvnw clean compile'
             }
