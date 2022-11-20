@@ -1,0 +1,60 @@
+00Descricao de tarefas30-05-2022 21:46:1201
+02Caio                                              caio@caio.caio                                                                                      
+03SummerNote                    Saturno                                                                                             Saturninho                                        2022-05-29 00:00:00
+02Caio                                              caio@caio.caio                                                                                      
+03Novo Post                     dasdasd                                                                                             dasdasd                                           2022-05-29 00:00:00
+02Caio                                              caio@caio.caio                                                                                      
+03Folha ATA                     FOLHAAAAA                                                                                           FOLHAAAAA                                         2022-05-29 00:00:00
+02Caio                                              caio@caio.caio                                                                                      
+03SummerNote2                   DSADASDASDASDASD                                                                                    DASDASDASDASD                                     2022-05-29 00:00:00
+0100004
+00Descricao de tarefas30-05-2022 21:54:3901
+02Caio                                              caio@caio.caio                                                                                      
+03SummerNote                    Saturno                                                                                             Saturninho                                        2022-05-29 00:00:00
+02Caio                                              caio@caio.caio                                                                                      
+03Novo Post                     dasdasd                                                                                             dasdasd                                           2022-05-29 00:00:00
+02Caio                                              caio@caio.caio                                                                                      
+03Folha ATA                     FOLHAAAAA                                                                                           FOLHAAAAA                                         2022-05-29 00:00:00
+02Caio                                              caio@caio.caio                                                                                      
+03SummerNote2                   DSADASDASDASDASD                                                                                    DASDASDASDASD                                     2022-05-29 00:00:00
+0100004
+00Descricao de tarefas30-05-2022 21:55:0301
+02Gaspar                                            gaspar@gmail.com                                                                                    
+03Projeto 09                    Criação de Login na parte de Dev                                                                    nenhuma observação                                2022-07-04 00:00:00
+0100001
+00Descricao de tarefas30-05-2022 21:57:0101
+02Gaspar                                            gaspar@gmail.com                                                                                    
+03Projeto 09                    Criação de Login na parte de Dev                                                                    nenhuma observação                                2022-07-04 00:00:00
+02Gaspar                                            gaspar@gmail.com                                                                                    
+03ESSE É O TITULO               ESSA É A DESCRICAO                                                                                  ESSA É OBSERVACAO                                 null               
+0100002
+00Descricao de tarefas30-05-2022 22:00:3001
+02Gaspar                                            gaspar@gmail.com                                                                                    
+03Projeto 09                    Criação de Login na parte de Dev                                                                    nenhuma observação                                2022-07-04 00:00:00
+02Gaspar                                            gaspar@gmail.com                                                                                    
+03ESSE É O TITULO               ESSA É A DESCRICAO                                                                                  ESSA É OBSERVACAO                                 null               
+0100002
+00Descricao de tarefas30-05-2022 22:04:4001
+02Gaspar                                            gaspar@gmail.com                                                                                    
+03Projeto 09                    Criação de Login na parte de Dev                                                                    nenhuma observação                                2022-07-04 00:00:00
+02Gaspar                                            gaspar@gmail.com                                                                                    
+03ESSE É O TITULO               ESSA É A DESCRICAO                                                                                  ESSA É OBSERVACAO                                 null               
+0100002
+00Descricao de tarefas30-05-2022 22:05:2801
+02Gaspar                                            gaspar@gmail.com                                                                                    
+03Projeto 09                    Criação de Login na parte de Dev                                                                    nenhuma observação                                2022-07-04 00:00:00
+02Gaspar                                            gaspar@gmail.com                                                                                    
+03ESSE É O TITULO               ESSA É A DESCRICAO                                                                                  ESSA É OBSERVACAO                                 null               
+0100002
+00Descricao de tarefas30-05-2022 22:17:1501
+02Gaspar                                            gaspar@gmail.com                                                                                    
+03Projeto 09                    Criação de Login na parte de Dev                                                                    nenhuma observação                                2022-07-04 00:00:00
+02Gaspar                                            gaspar@gmail.com                                                                                    
+03ESSE É O TITULO               ESSA É A DESCRICAO                                                                                  ESSA É OBSERVACAO                                 null               
+0100002
+00Descricao de tarefas30-05-2022 22:17:4301
+02Gaspar                                            gaspar@gmail.com                                                                                    
+03Projeto 09                    Criação de Login na parte de Dev                                                                    nenhuma observação                                2022-07-04 00:00:00
+02Gaspar                                            gaspar@gmail.com                                                                                    
+03ESSE É O TITULO               ESSA É A DESCRICAO                                                                                  ESSA É OBSERVACAO                                 null               
+0100002
