@@ -4,19 +4,25 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Build World'
+               git 'https://github.com/MateusTeixeiraFolha/goDevs.git'
             }
         }
         
          stage('Test') {
             steps {
-                echo 'Test World'
+                 sh './mvn test'
             }
         }
          stage('Deploy') {
             steps {
                 echo 'Deploy World'
             }
+             post {
+                always {
+                    junit '**/target/surefire-reports/TEST-*.xml'
+                }
+            }
+
         }
     }
 }
