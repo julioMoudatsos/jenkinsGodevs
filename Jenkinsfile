@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'maven:3-alpine'
-            args '-v /root/.m2:/root/.m2'
-        }
-    }
+    agent any
     options {
         skipStagesAfterUnstable()
     }
@@ -26,8 +21,10 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                sh './jenkins/scripts/deliver.sh'
+                    sh '/var/lib/jenkins/workspace/spring-java/scripts/deliver.sh'
+                
             }
         }
+        
     }
 }
