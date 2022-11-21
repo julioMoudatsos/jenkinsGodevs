@@ -4,18 +4,21 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Build World'
+                git 'https://github.com/julioMoudatsos/jenkinsGodevs.git'
+                sh './mvn clean compile'
+                // bat '.\\mvn clean compile'
             }
         }
-        
-         stage('Test') {
+        stage('Test') {
             steps {
-                echo 'Test World'
+                sh './mvn test'
+                // bat '.\\mvn test'
             }
-        }
-         stage('Deploy') {
-            steps {
-                echo 'Deploy World'
+
+            post {
+                always {
+                    junit '**/target/surefire-reports/TEST-*.xml'
+                }
             }
         }
     }
