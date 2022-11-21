@@ -1,4 +1,4 @@
-pipeline{
+node {
     def mvnHome
     stage('Clone') {
         git branch: 'dev', url: 'https://github.com/julioMoudatsos/jenkinsGodevs.git'
@@ -14,31 +14,9 @@ pipeline{
     stage('Install') {
         sh "'${mvnHome}/bin/mvn' -DskipTests clean install "
     }
-    options {
-        skipStagesAfterUnstable()
-    }
-    stages {
-        stage('Build') {
-            steps {
-                sh 'mvn -B -DskipTests clean package'
-            }
-        }
-        stage('Test2') {
-            steps {
-                sh 'mvn test -Dmaven.test.failure.ignore=true'
-            }
-            post {
-                success {
-                    junit 'target/surefire-reports/*.xml'
-                }
-            }
-        }
-        stage('Deliver') {
-            steps {
-                    sh '/var/lib/jenkins/workspace/spring-java/scripts/deliver.sh'
-                
-            }
-        }
-        
+
+   
+    stage('Deploy') {
+        sh "CODE_SC_HG="+ CODE_SC_HG
     }
 }
