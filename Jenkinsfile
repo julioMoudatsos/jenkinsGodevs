@@ -1,30 +1,25 @@
-pipeline {
-    agent any
-    options {
-        skipStagesAfterUnstable()
+node {
+    def mvnHome
+    stage('Clone') {
+        git branch: 'dev', url: 'https://github.com/julioMoudatsos/jenkinsGodevs.git'
+        mvnHome = tool '/usr/bin/mvn'
+        CODE_SC_HG = sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
     }
-    stages {
-        stage('Build') {
-            steps {
-                sh 'mvn -B -DskipTests clean package'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'mvn test -Dmaven.test.failure.ignore=true'
-            }
-            post {
-                success {
-                    junit 'target/surefire-reports/*.xml'
-                }
-            }
-        }
-        stage('Deliver') {
-            steps {
-                    sh '/var/lib/jenkins/workspace/spring-java/scripts/deliver.sh'
-                
-            }
-        }
-        
+
+    stage('Test') {
+       sh "'${mvnHome}/bin/mvn' test "
+
+    }
+
+    stage('Install') {
+        sh "'${mvnHome}/bin/mvn' -DskipTests clean install "
+    }
+
+    stage('Docker Build') {
+        sh "docker build -t ci-cd-project-homolog:"+CODE_SC_HG+" ."
+    }
+
+    stage('Deploy') {
+        sh "CODE_SC_HG="+ CODE_SC_HG + " docker stack deploy --compose-file homolog.yml cicd-homolog "
     }
 }
