@@ -1,32 +1,24 @@
 pipeline {
-    agent {
-        docker {
-            image 'maven:3-alpine'
-            args '-v /root/.m2:/root/.m2'
-        }
-    }
-    options {
-        skipStagesAfterUnstable()
-    }
+    agent any
+
     stages {
         stage('Build') {
             steps {
-                sh 'mvn -B -DskipTests clean package'
+                git 'https://github.com/julioMoudatsos/jenkinsGodevs.git'
+                sh './mvnw clean compile'
+                // bat '.\\mvnw clean compile'
             }
         }
         stage('Test') {
             steps {
-                sh 'mvn test -Dmaven.test.failure.ignore=true'
+                sh './mvnw test'
+                // bat '.\\mvnw test'
             }
+
             post {
-                success {
-                    junit 'target/surefire-reports/*.xml'
+                always {
+                    junit '**/target/surefire-reports/TEST-*.xml'
                 }
-            }
-        }
-        stage('Deliver') {
-            steps {
-                sh './jenkins/scripts/deliver.sh'
             }
         }
     }
