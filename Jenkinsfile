@@ -8,7 +8,17 @@ pipeline {
             }
         }
         
-         stage('Test') {
+         stage('Test de login Dev') {
+            steps {
+                echo 'Test World'
+            }
+        }
+         stage('Test de login Contratado') {
+            steps {
+                echo 'Test World'
+            }
+        }
+      stage('Test criar Vaga Emprego') {
             steps {
                 echo 'Test World'
             }
