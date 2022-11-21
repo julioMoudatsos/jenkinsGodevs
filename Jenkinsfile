@@ -1,22 +1,33 @@
-node {
-    def mvnHome
-    stage('Clone') {
-        git branch: 'dev', url: 'https://github.com/julioMoudatsos/jenkinsGodevs.git'
-        mvnHome = tool '/usr/bin/mvn'
-        CODE_SC_HG = sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
+pipeline {
+    agent {
+        docker {
+            image 'maven:3-alpine'
+            args '-v /root/.m2:/root/.m2'
+        }
     }
-
-    stage('Test') {
-       sh "'${mvnHome}/bin/mvn' test "
-
+    options {
+        skipStagesAfterUnstable()
     }
-
-    stage('Install') {
-        sh "'${mvnHome}/bin/mvn' -DskipTests clean install "
-    }
-
-   
-    stage('Deploy') {
-        sh "CODE_SC_HG="+ CODE_SC_HG
+    stages {
+        stage('Build') {
+            steps {
+                sh 'mvn -B -DskipTests clean package'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'mvn test -Dmaven.test.failure.ignore=true'
+            }
+            post {
+                success {
+                    junit 'target/surefire-reports/*.xml'
+                }
+            }
+        }
+        stage('Deliver') {
+            steps {
+                sh './jenkins/scripts/deliver.sh'
+            }
+        }
     }
 }
