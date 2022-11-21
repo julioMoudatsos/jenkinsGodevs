@@ -1,4 +1,4 @@
-node {
+pipeline{
     def mvnHome
     stage('Clone') {
         git branch: 'dev', url: 'https://github.com/julioMoudatsos/jenkinsGodevs.git'
