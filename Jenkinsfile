@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                    sh '/var/lib/jenkins/workspace/spring-java/scripts/deliver.sh'
+                   echo "Pipeline Usando Jenkinsfile"
                 
             }
         }
