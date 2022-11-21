@@ -1,32 +1,30 @@
 pipeline {
     agent any
-
+    options {
+        skipStagesAfterUnstable()
+    }
     stages {
         stage('Build') {
             steps {
-                echo 'Build World'
+                sh 'mvn -B -DskipTests clean package'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'mvn test -Dmaven.test.failure.ignore=true'
+            }
+            post {
+                success {
+                    junit 'target/surefire-reports/*.xml'
+                }
+            }
+        }
+        stage('Deliver') {
+            steps {
+                    sh '/var/lib/jenkins/workspace/spring-java/scripts/deliver.sh'
+                
             }
         }
         
-         stage('Test de login Dev') {
-            steps {
-                echo 'Test World'
-            }
-        }
-         stage('Test de login Contratado') {
-            steps {
-                echo 'Test World'
-            }
-        }
-      stage('Test criar Vaga Emprego') {
-            steps {
-                echo 'Test World'
-            }
-        }
-         stage('Deploy') {
-            steps {
-                echo 'Deploy World'
-            }
-        }
     }
 }
