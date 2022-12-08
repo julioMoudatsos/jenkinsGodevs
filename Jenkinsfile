@@ -4,7 +4,7 @@ pipeline {
  
       stage('Testes de Sanidade') {
        steps {
-         sh 'echo "Hello World"'
+         sh 'ls'
          sh '''
          echo "Multiline shell steps works too"
          ls -lah
