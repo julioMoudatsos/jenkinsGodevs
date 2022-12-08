@@ -5,7 +5,7 @@ pipeline {
       stage('Testes de Sanidade') {
        steps {
          sh "'pwd'"
-         sh "mvn test"
+         sh "sudo mvn test"
          dir("target") { sh "ls" }
          sh '''
          echo "Multiline shell steps works too"
