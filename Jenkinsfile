@@ -5,14 +5,14 @@ pipeline {
         stage('Build') {
             steps {
                 git 'https://github.com/julioMoudatsos/jenkinsGodevs.git'
-                sh './mvn clean compile'
-                // bat '.\\mvn clean compile'
+                sh './mvnw clean compile'
+                // bat '.\\mvnw clean compile'
             }
         }
         stage('Test') {
             steps {
-                sh './mvn test'
-                // bat '.\\mvn test'
+                sh './mvnw test'
+                // bat '.\\mvnw test'
             }
 
             post {
