@@ -4,7 +4,6 @@ pipeline {
     stage('Build') {
        steps {
          sh 'pwd'
-         sh 'ls'
          echo "Multiline shell steps works too"
          ls -lah
          '''
