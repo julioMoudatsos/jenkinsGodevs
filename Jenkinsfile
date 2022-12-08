@@ -6,8 +6,7 @@ pipeline {
        steps {
          sh "'pwd'"
          sh "'ls'"
-         sh "'cd target/'"
-         sh "'pwd'"
+         dir("target") { sh "ls" }
          sh '''
          echo "Multiline shell steps works too"
          ls -lah
