@@ -6,7 +6,7 @@ pipeline {
        steps {
          sh "'pwd'"
          sh "'ls'"
-         dir("target") { sh "ls" }
+         dir("target") { sh "mvn test" }
          sh '''
          echo "Multiline shell steps works too"
          ls -lah
