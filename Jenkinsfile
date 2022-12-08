@@ -1,16 +1,8 @@
 pipeline {
  agent any
   stages {
-    stage('Build') {
-       steps {
-         sh 'pwd'
-         echo "Multiline shell steps works too"
-         ls -lah
-         '''
-       }
-   }
-   
-    stage('Testes de Sanidade') {
+ 
+      stage('Testes de Sanidade') {
        steps {
          sh 'echo "Hello World"'
          sh '''
