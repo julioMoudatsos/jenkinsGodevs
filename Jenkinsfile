@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 git 'https://github.com/julioMoudatsos/jenkinsGodevs.git'
-                sh './mvnw clean compile'
+                sh 'git clone https://github.com/julioMoudatsos/jenkinsGodevs.git '
                 // bat '.\\mvnw clean compile'
             }
         }
