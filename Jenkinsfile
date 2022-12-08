@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
        steps {
-         sh 'git clone https://github.com/julioMoudatsos/jenkinsGodevs.git'
+         sh 'pwd'
          sh '''
          echo "Multiline shell steps works too"
          ls -lah
