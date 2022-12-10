@@ -2,10 +2,10 @@ pipeline {
  agent any
   stages {
  
-      stage('Testes de Sanidade') {
+      stage('Tests For Devs in Godevs Application SanityTest') {
        steps {
          sh "'pwd'"
-         sh "'ls'"
+         sh "'mvn test -Dtest="DevTest"'"
      
        }
    }
