@@ -1,12 +1,10 @@
 pipeline {
-    
-    stages {
-        stage('Build') {
-            steps {
-                sh 'pwd'
-                sh 'ls'
-            }
-        }
-       
-        }
+ agent any
+ stages {
+ stage('Build') {
+ steps {
+     sh 'pwd'
+ }
+ }
+ }
 }
