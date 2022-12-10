@@ -57,7 +57,7 @@ public class DevTest {
 
         ResponseEntity resposta = d.getContratantes();
 
-        assertEquals(400, resposta.getStatusCodeValue());
+        assertEquals(200, resposta.getStatusCodeValue());
         assertNotNull(resposta.getBody());
         assertEquals(listMock, resposta.getBody());
     }
