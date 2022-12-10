@@ -5,7 +5,7 @@ pipeline {
       stage('Testes de Sanidade') {
        steps {
          sh "'pwd'"
-         sh 'mvn test -Dtest="DevTest"'
+         sh 'sudo mvn test -Dtest="DevTest"'
      
        }
    }
