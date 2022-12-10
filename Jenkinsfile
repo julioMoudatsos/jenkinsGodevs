@@ -1,31 +1,25 @@
 pipeline {
     agent any
-    options {
-        skipStagesAfterUnstable()
-    }
+
     stages {
         stage('Build') {
             steps {
-                sh 'mvn -B -DskipTests clean package'
+                git 'https://github.com/vdespa-collab/java-rest-api-calculator.git'
+                sh './mvnw clean compile'
+                // bat '.\\mvnw clean compile'
             }
         }
         stage('Test') {
             steps {
-                sh 'mvn test -Dmaven.test.failure.ignore=true'
+                sh './mvnw test'
+                // bat '.\\mvnw test'
             }
+
             post {
-                success {
-                    junit 'target/surefire-reports/*.xml'
-                    sh 'kill -9 `lsof -t -i:8080` || echo "nada na porta 8080"'
+                always {
+                    junit '**/target/surefire-reports/TEST-*.xml'
                 }
             }
         }
-        stage('Deliver') {
-            steps {
-                    sh '/var/lib/jenkins/workspace/spring-java/scripts/deliver.sh'
-                
-            }
-        }
-        
     }
 }
